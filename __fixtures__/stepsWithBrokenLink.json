@@ -1,0 +1,29 @@
+[
+  {
+    "id": "welcome",
+    "messages": ["Выберите раздел."],
+    "buttons": [
+      {
+        "text": "Раздел, которого нет",
+        "nextStepId": "missing",
+        "type": "button"
+      },
+      {
+        "text": "Контакты",
+        "nextStepId": "contacts",
+        "type": "button"
+      }
+    ]
+  },
+  {
+    "id": "contacts",
+    "messages": ["Пишите нам на support@example.com."],
+    "buttons": [
+      {
+        "text": "Назад",
+        "nextStepId": "welcome",
+        "type": "button"
+      }
+    ]
+  }
+]

@@ -1,28 +1,71 @@
 # Тестирование виджета чат-бота
 
-[![hexlet-check](https://github.com/kicha3007-boop/frontend-testing-react-project-89/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/kicha3007-boop/frontend-testing-react-project-89/actions)
+[![hexlet-check](https://github.com/kicha3007-boop/frontend-testing-react-project-89/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/kicha3007-boop/frontend-testing-react-project-89/actions/workflows/hexlet-check.yml)
+[![main](https://github.com/kicha3007-boop/frontend-testing-react-project-89/actions/workflows/main.yml/badge.svg)](https://github.com/kicha3007-boop/frontend-testing-react-project-89/actions/workflows/main.yml)
 
-В этом проекте предстоит протестировать готовый виджет чат-бота, который встраивается на страницу и общается с пользователем по сценарию
+Автотесты для готового виджета чат-бота [@hexlet/chatbot-v2](https://github.com/Hexlet/react-flowbot-ui-kit).
+Виджет здесь не пишется, а проверяется: тесты проводят его по сценариям из фикстур
+и смотрят на то, что видит пользователь, — окно чата, переписку и варианты ответа.
 
 Учебный проект Хекслета: https://ru.hexlet.io/programs/frontend-testing-react
 
+## Что проверяется
+
+- Виджет отрисовывается: видна кнопка «Открыть Чат», окно чата закрыто.
+- Окно открывается с заголовком и приветственным шагом `welcome`, закрывается крестиком,
+  после повторного открытия разговор начинается сначала.
+- Переходы по сценарию: ответ пользователя попадает в переписку, за ним — сообщения
+  следующего шага, прежние сообщения остаются, кнопки сменяются кнопками нового шага.
+- Переписка прокручивается к новому сообщению.
+- Некорректная конфигурация: нет шага `welcome`, пустой список шагов, кнопка ведёт на
+  несуществующий шаг, конфигурация не передана.
+- Встраивание в приложение: форма регистрации работает как до встраивания,
+  разговор с ботом не сбрасывает введённые данные.
 
 ## Стек
 
-- JavaScript
+React 19, Vite 8, Vitest 5, jsdom, Testing Library (`@testing-library/react` 16, `user-event`, `jest-dom`),
+oxlint и oxfmt.
 
 ## Установка
-
-<!-- Опишите установку: клонирование, зависимости, переменные окружения -->
 
 ```bash
 git clone https://github.com/kicha3007-boop/frontend-testing-react-project-89.git
 cd frontend-testing-react-project-89
+make install
 ```
 
-## Использование
+## Запуск
 
-<!-- Добавьте примеры запуска и запись asciinema — именно это смотрит работодатель -->
+```bash
+make test   # тесты
+make lint   # линтер и проверка форматирования
+make dev    # приложение с формой и встроенным виджетом на http://localhost:5173
+```
+
+## Как устроены тесты
+
+- `__fixtures__/` — сценарии бота: про выбор курса и про поддержку (там `welcome` стоит не первым),
+  два намеренно некорректных сценария и данные для формы регистрации.
+- `__tests__/pages/` — Page Object'ы: `ChatWidgetPage` (окно чата, переписка, варианты ответа)
+  и `RegistrationFormPage` (форма приложения и таблица результата).
+- `__tests__/helpers/setup.jsx` — отрисовка виджета или приложения вместе с `userEvent`.
+- `__tests__/*.test.jsx` — тесты по областям: виджет, переходы по сценарию,
+  пограничные случаи, встраивание в приложение.
+- `vitest.setup.js` — матчеры `jest-dom`, заглушка прокрутки (её нет в jsdom) и очистка после теста.
+
+## Шаги проекта
+
+<!-- Ссылки на записи asciinema по шагам -->
+
+1. Знакомство с проектом
+2. Подготовка окружения
+3. Изучение структуры чат-бота
+4. Базовые тесты
+5. Взаимодействие пользователя
+6. Встраивание виджета в приложение
+7. Крайние случаи
+8. Рефакторинг тестов
 
 ---
 

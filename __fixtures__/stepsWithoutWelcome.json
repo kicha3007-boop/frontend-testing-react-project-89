@@ -1,0 +1,18 @@
+[
+  {
+    "id": "start",
+    "messages": ["Этот шаг не стартовый: у сценария нет шага welcome."],
+    "buttons": [
+      {
+        "text": "Дальше",
+        "nextStepId": "finish",
+        "type": "button"
+      }
+    ]
+  },
+  {
+    "id": "finish",
+    "messages": ["Сюда разговор не дойдёт."],
+    "buttons": []
+  }
+]

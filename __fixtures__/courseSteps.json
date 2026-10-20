@@ -1,0 +1,68 @@
+[
+  {
+    "id": "welcome",
+    "messages": [
+      "Привет! Я помогу подобрать курс.",
+      "Нажмите «Начать разговор», когда будете готовы."
+    ],
+    "buttons": [
+      {
+        "text": "Начать разговор",
+        "nextStepId": "start",
+        "type": "button"
+      }
+    ]
+  },
+  {
+    "id": "start",
+    "messages": ["Что вам ближе?"],
+    "buttons": [
+      {
+        "text": "Хочу попробовать себя в IT",
+        "nextStepId": "beginner",
+        "type": "button"
+      },
+      {
+        "text": "Я уже программирую",
+        "nextStepId": "advanced",
+        "type": "button"
+      }
+    ]
+  },
+  {
+    "id": "beginner",
+    "messages": ["Начните с подготовительного курса: он длится две недели."],
+    "buttons": [
+      {
+        "text": "Вернуться назад",
+        "nextStepId": "start",
+        "type": "button"
+      },
+      {
+        "text": "Записаться",
+        "nextStepId": "finish",
+        "type": "button"
+      }
+    ]
+  },
+  {
+    "id": "advanced",
+    "messages": [
+      "Для опытных разработчиков есть курсы по архитектуре.",
+      "Ещё можно пройти тестирование и пропустить базовые темы.",
+      "Расписание пришлём на почту."
+    ],
+    "buttons": [
+      {
+        "text": "Вернуться назад",
+        "nextStepId": "start",
+        "type": "button"
+      }
+    ]
+  },
+  {
+    "id": "finish",
+    "messages": ["Готово! Менеджер свяжется с вами в течение дня."],
+    "buttons": []
+  }
+]

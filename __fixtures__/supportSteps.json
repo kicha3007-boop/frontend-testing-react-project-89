@@ -1,0 +1,50 @@
+[
+  {
+    "id": "payment",
+    "messages": ["Вы в разделе оплаты."],
+    "buttons": [
+      {
+        "text": "В начало",
+        "nextStepId": "welcome",
+        "type": "button"
+      }
+    ]
+  },
+  {
+    "id": "welcome",
+    "messages": ["Служба поддержки на связи.", "Выберите тему обращения."],
+    "buttons": [
+      {
+        "text": "Оплата",
+        "nextStepId": "payment",
+        "type": "button"
+      },
+      {
+        "text": "Доступ к курсу",
+        "nextStepId": "access",
+        "type": "button"
+      },
+      {
+        "text": "Позвать человека",
+        "nextStepId": "human",
+        "type": "button"
+      }
+    ]
+  },
+  {
+    "id": "access",
+    "messages": ["Проверьте, что вы вошли под своим аккаунтом."],
+    "buttons": [
+      {
+        "text": "В начало",
+        "nextStepId": "welcome",
+        "type": "button"
+      }
+    ]
+  },
+  {
+    "id": "human",
+    "messages": ["Оператор подключится через пару минут."],
+    "buttons": []
+  }
+]

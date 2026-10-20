@@ -1,0 +1,8 @@
+{
+  "email": "ivan@example.com",
+  "password": "secret-123",
+  "address": "Невский проспект, 12",
+  "city": "Санкт-Петербург",
+  "country": "Россия",
+  "acceptRules": true
+}
