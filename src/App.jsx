@@ -1,10 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Widget from "@hexlet/chatbot-v2";
-import defaultSteps from "@hexlet/chatbot-v2/example-steps";
-import "@hexlet/chatbot-v2/styles";
+import defaultSteps from "./steps";
 
 // Сценарий бота можно передать снаружи (так делают тесты),
-// по умолчанию — пример из пакета виджета
+// по умолчанию — пример сценария из документации виджета.
+// Стили виджета подключаются в main.jsx: тестам они не нужны
 const App = ({ steps = defaultSteps }) => {
   const [form, setForm] = useState({
     email: "",

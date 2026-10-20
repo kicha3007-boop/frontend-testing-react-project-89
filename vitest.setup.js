@@ -1,6 +1,11 @@
-import "@testing-library/jest-dom/vitest";
+import * as matchers from "@testing-library/jest-dom/matchers";
 import { cleanup } from "@testing-library/react";
-import { afterEach, beforeEach, vi } from "vitest";
+import { afterEach, beforeEach, expect, vi } from "vitest";
+
+// Матчеры регистрируются на том expect, которым пользуются тесты.
+// Готовый модуль "@testing-library/jest-dom/vitest" сам импортирует vitest
+// из node_modules и при запуске чужим экземпляром vitest расширяет не тот expect.
+expect.extend(matchers);
 
 // jsdom не умеет прокручивать страницу, а виджет прокручивает переписку
 // к последнему сообщению. Заглушка ставится заново перед каждым тестом,

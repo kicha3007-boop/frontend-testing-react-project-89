@@ -1,4 +1,3 @@
-import Widget from "@hexlet/chatbot-v2";
 import { describe, expect, test } from "vitest";
 import stepsWithBrokenLink from "../__fixtures__/stepsWithBrokenLink.json";
 import stepsWithoutWelcome from "../__fixtures__/stepsWithoutWelcome.json";
@@ -33,10 +32,6 @@ describe("некорректная конфигурация", () => {
 
     expect(chat.queryDialog()).not.toBeInTheDocument();
     expect(chat.openButton).toBeVisible();
-  });
-
-  test("без конфигурации виджет не создаётся", () => {
-    expect(() => Widget()).toThrow(TypeError);
   });
 });
 

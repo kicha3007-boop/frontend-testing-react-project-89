@@ -1,6 +1,7 @@
 import Widget from "@hexlet/chatbot-v2";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import React from "react";
 import App from "../../src/App";
 import ChatWidgetPage from "../pages/ChatWidgetPage";
 import RegistrationFormPage from "../pages/RegistrationFormPage";
